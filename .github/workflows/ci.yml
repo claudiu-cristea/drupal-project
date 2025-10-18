@@ -8,6 +8,7 @@ jobs:
             matrix:
                 include:
                     - php_version: "8.3"
+                    - php_version: "8.4"
         env:
             PHP_VERSION: ${{ matrix.php_version }}
             DOCKER_USER_ID: "1001"
