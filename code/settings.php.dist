@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * For documentation see web/sites/default/default.settings.php
+ */
+
+/** @var string $app_root */
+/** @var string $site_path */
+
+$settings['config_sync_directory'] = '../config/sync';
+$settings['config_exclude_modules'] = [
+  'automated_cron',
+  'dblog',
+  'devel',
+  'field_ui',
+  'stage_file_proxy',
+  'upgrade_status',
+  'views_ui',
+];
+
+$settings['update_free_access'] = FALSE;
+$settings['entity_update_batch_size'] = 50;
+$settings['entity_update_backup'] = TRUE;
+$settings['migrate_node_migrate_type_classic'] = FALSE;
+
+$settings['file_public_path'] = 'sites/default/files';
+$settings['file_private_path'] = '../files/private';
+
+$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+
+$settings['file_scan_ignore_directories'] = [
+  'node_modules',
+  'bower_components',
+];
+
+// Automatically generated include for settings managed by DDEV.
+if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists($app_root . '/' . $site_path . '/settings.ddev.php')) {
+  include $app_root . '/' . $site_path . '/settings.ddev.php';
+}
+
+// Keep this code block at the end of this file to take full effect.
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}

@@ -1,0 +1,25 @@
+{
+    "name": "claudiu-cristea/drupal-project",
+    "description": "Scaffold Drupal project custom directories",
+    "type": "composer-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0",
+        "phpstan/phpstan": "^2.1",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "extra": {
+        "class": "Drupal\\Project\\Plugin"
+    },
+    "config": {
+      "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\Project\\": "src/"
+        }
+    }
+}

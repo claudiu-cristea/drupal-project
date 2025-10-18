@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+## Description: Run PHPStan inside the web container
+## Usage: phpstan [flags] [args]
+## Example: "ddev phpstan" or "ddev phpstan -n"
+## ExecRaw: true
+
+phpstan analyse src "$@"
