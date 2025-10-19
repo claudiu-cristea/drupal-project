@@ -1,6 +1,6 @@
 {
     "name": "claudiu-cristea/drupal-project",
-    "description": "Scaffold Drupal project custom directories",
+    "description": "Allows to keep all Drupal code outside of web root",
     "type": "composer-plugin",
     "license": "GPL-2.0-or-later",
     "require": {
