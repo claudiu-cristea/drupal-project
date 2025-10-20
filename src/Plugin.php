@@ -41,6 +41,7 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
         $this->setupExtensions();
         $this->setupSettings();
         $this->setupFiles();
+        $this->ignoreWebroot();
     }
 
     private function setupExtensions(): void
@@ -162,6 +163,28 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
             symlink("../../$publicFiles", $publicFilesLink);
             $this->io->write(sprintf('Symlinked %s as %s', $publicFiles, $publicFilesLink));
         }
+    }
+
+    private function ignoreWebroot(): void
+    {
+        $contents = '';
+        if (file_exists('.gitignore')) {
+            $contents = trim(file_get_contents('.gitignore')) . "\n";
+
+            if ($this->isWebrootIgnored($contents)) {
+                return;
+            }
+        }
+        $contents .= "/web/\n";
+        file_put_contents('.gitignore', $contents);
+
+        $this->io->write('Added /web/ to .gitignore');
+    }
+
+    private function isWebrootIgnored(string $contents): bool
+    {
+        $contents = str_replace("\r\n", "\n", $contents);
+        return (bool) preg_match('~^/?web/?$~m', $contents);
     }
 
     public function deactivate(Composer $composer, IOInterface $io): void

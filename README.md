@@ -11,7 +11,7 @@ Directory/file                 Symlinked as
 ├─ files
 │  ├─ private
 │  ├─ public                   -> web/sites/default/files
-│  └─ .gitignore               Both, private and public are ignored
+│  └─ .gitignore                  Both, private and public are ignored
 ...
 ├─ src
 │  └─ Drupal
@@ -20,6 +20,8 @@ Directory/file                 Symlinked as
 │     ├─ Settings
 │     │  ├─ settings.php       -> web/sites/default/settings.php
 │     │  ├─ settings.local.php -> web/sites/default/settings.local.php
-│     │  └─ .gitignore         settings.local.php is ignored 
+│     │  └─ .gitignore            settings.local.php is ignored
 │     └─ Themes                -> web/themes/custom
 ```
+
+The webroot directory (`web/`) is also added to the project's `.gitignore` if it isn't yet there.
