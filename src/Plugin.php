@@ -101,7 +101,7 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
                 ));
             }
 
-            symlink("../../$settingsFile", $settingsLink);
+            symlink("../../../$settingsFile", $settingsLink);
             $this->io->write(sprintf('Symlinked %s as %s', $settingsFile, $settingsLink));
         }
 
@@ -125,7 +125,7 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
                 ));
             }
 
-            symlink("../../$settingsLocalFile", $settingsLocalLink);
+            symlink("../../../$settingsLocalFile", $settingsLocalLink);
             $this->io->write(sprintf('Symlinked %s as %s', $settingsLocalFile, $settingsLocalLink));
         }
     }
@@ -160,7 +160,7 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
                 ));
             }
 
-            symlink("../../$publicFiles", $publicFilesLink);
+            symlink("../../../$publicFiles", $publicFilesLink);
             $this->io->write(sprintf('Symlinked %s as %s', $publicFiles, $publicFilesLink));
         }
     }
