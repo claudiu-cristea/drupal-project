@@ -3,6 +3,22 @@
     "description": "Allows to keep all Drupal code outside of web root",
     "type": "composer-plugin",
     "license": "GPL-2.0-or-later",
+    "keywords": [
+      "Drupal",
+      "docroot",
+      "webroot"
+    ],
+    "authors": [
+      {
+        "name": "Claudiu Cristea",
+        "email": "clau.cristea@gmail.com"
+      }
+    ],
+    "support": {
+        "issues": "https://github.com/composer/ca-bundle/issues"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": false,
     "require": {
         "composer-plugin-api": "^2.0"
     },
