@@ -2,7 +2,7 @@
 
 Allows to keep all Drupal code outside of web root.
 
-The package Composer plugin that scaffolds the custom code directories and settings for a Drupal project. The main idea is to keep all custom code outside the web root.
+The package provides a Composer plugin that scaffolds the custom code directories and settings for a Drupal project. The main idea is to keep all custom code outside the web root.
 
 When running Composer install or update, the following directories and files will be created, if they don't exist. Under web root symlinks are created in the proper location. For instance `src/Drupal/Modules` is symlinked as `web/modules/custom`, `files/public` is symlinked as `web/sites/default/files` and so on.
 
@@ -11,7 +11,7 @@ Directory/file                 Symlinked as
 ├─ files
 │  ├─ private
 │  ├─ public                   -> web/sites/default/files
-│  └─ .gitignore                  Both, private and public are ignored
+│  └─ .gitignore                  Both, private and public, are ignored
 ...
 ├─ src
 │  └─ Drupal
