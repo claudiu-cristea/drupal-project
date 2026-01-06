@@ -47,9 +47,11 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
     private function setupExtensions(): void
     {
         $dir = getcwd();
+        echo "$dir\n";
         foreach (self::EXTENSION_TYPE as $singular => $plural) {
             $sourceDir = "src/Drupal/" . ucfirst($plural);
             $linkDir = "$dir/web/$plural/custom";
+            echo "$linkDir\n";
 
             if (!is_dir($sourceDir)) {
                 mkdir(directory: $sourceDir, recursive: true);
